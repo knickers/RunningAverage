@@ -1,0 +1,11 @@
+{
+  "name": "AnalogSmoother",
+  "keywords": "arduino, analog, smoother",
+  "description": "This Arduino libary provides a simple single method for reading an analog input averaged over a configurable number of readings.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knickers/AnalogSmother"
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
