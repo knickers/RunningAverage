@@ -1,47 +1,38 @@
 #include "AnalogSmoother.h"
 
 AnalogSmoother::AnalogSmoother(int pin) {
-	AnalogSmoother(pin, 20);
+	init(pin, 20);
 }
 
 AnalogSmoother::AnalogSmoother(int pin, unsigned int size) {
-	if (size < 1) {
-		throw "AnalogSmoother buffer must be larger than 0";
-	}
-
-	_i = 0;
-	_pin = pin;
-	_size = size;
-	_total = 0;
-	_readings = new int[_size];
-	assert(_readings);
-	_lastReading = 0;
-
-	for (int i=0; i<_size; i++) {
-		_readings[i] = 0;
-	}
+	init(pin, size);
 }
 
 AnalogSmoother::~AnalogSmoother() {
-	delete _readings;
+	delete mReadings;
 }
 
-AnalogSmoother::read() {
-	unsigned long now = millis();
+void AnalogSmoother::init(int pin, unsigned int size) {
+	mI = 0;
+	mPin = pin;
+	mSize = size;
+	mTotal = 0;
+	mReadings = new int[size];
 
-	if (now - _lastReading < 5) {
-		return _total / _size;
+	for (int i=0; i<size; i++) {
+		mReadings[i] = 0;
+	}
+}
+
+double AnalogSmoother::read() {
+	mTotal       -= mReadings[mI];    // Subtract old reading
+	mReadings[mI] = analogRead(mPin); // Read new value
+	mTotal       += mReadings[mI];    // Add new reading
+
+	mI++; // Increment readings index
+	if (mI >= mSize) {
+		mI = 0;
 	}
 
-	_lastReading  = now;
-	_total       -= _readings[_i];    // Subtract old reading
-	_readings[_i] = analogRead(_pin); // Read new value
-	_total       += _readings[_i];    // Add new reading
-
-	_i++; // Increment readings index
-	if (_i >= _size) {
-		_i = 0;
-	}
-
-	return (double)_total / (double)_size;
+	return (double)mTotal / (double)mSize;
 }

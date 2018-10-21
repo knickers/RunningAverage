@@ -10,12 +10,12 @@ class AnalogSmoother {
 		~AnalogSmoother();
 		double read();
 	private:
-		int _pin;
-		unsigned int _size;
-		unsigned int _i;
-		int _total;
-		int *_readings;
-		unsigned long _lastReading;
+		void init(int pin, unsigned int size);
+		int mPin;
+		unsigned int mSize;
+		unsigned int mI;
+		int mTotal;
+		int *mReadings;
 };
 
 #endif
