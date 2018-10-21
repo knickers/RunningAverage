@@ -8,7 +8,7 @@ void setup() {
 
 void loop() {
 	Serial.print(analogRead(A0));
-	Serial.print(",");
+	Serial.print(" ");
 	Serial.println(analog.read());
-	delay(10);
+	delay(10); // Slow down the serial output
 }
