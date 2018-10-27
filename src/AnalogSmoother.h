@@ -8,7 +8,7 @@ class AnalogSmoother {
 		AnalogSmoother(int pin);
 		AnalogSmoother(int pin, unsigned int size);
 		~AnalogSmoother();
-		double read();
+		float read();
 	private:
 		void init(int pin, unsigned int size);
 		int mPin;

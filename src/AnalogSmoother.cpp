@@ -24,7 +24,7 @@ void AnalogSmoother::init(int pin, unsigned int size) {
 	}
 }
 
-double AnalogSmoother::read() {
+float AnalogSmoother::read() {
 	mTotal       -= mReadings[mI];    // Subtract old reading
 	mReadings[mI] = analogRead(mPin); // Read new value
 	mTotal       += mReadings[mI];    // Add new reading
@@ -34,5 +34,5 @@ double AnalogSmoother::read() {
 		mI = 0;
 	}
 
-	return (double)mTotal / (double)mSize;
+	return (float)mTotal / (float)mSize;
 }
