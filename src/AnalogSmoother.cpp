@@ -19,7 +19,7 @@ void AnalogSmoother::init(int pin, unsigned int size) {
 	mTotal = 0;
 	mReadings = new int[size];
 
-	for (int i=0; i<size; i++) {
+	for (unsigned int i=0; i<size; i++) {
 		mReadings[i] = 0;
 	}
 }
