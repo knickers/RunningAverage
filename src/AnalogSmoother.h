@@ -5,13 +5,11 @@
 
 class AnalogSmoother {
 	public:
-		AnalogSmoother(int pin);
 		AnalogSmoother(int pin, unsigned int size);
 		~AnalogSmoother();
 		void fill();
 		float read();
 	private:
-		void init(int pin, unsigned int size);
 		int mPin;
 		unsigned int mSize;
 		unsigned int mI;

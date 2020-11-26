@@ -1,31 +1,23 @@
 #include "AnalogSmoother.h"
 
-AnalogSmoother::AnalogSmoother(int pin) {
-	init(pin, 20);
-}
-
 AnalogSmoother::AnalogSmoother(int pin, unsigned int size) {
-	init(pin, size);
-}
-
-AnalogSmoother::~AnalogSmoother() {
-	delete mReadings;
-}
-
-void AnalogSmoother::init(int pin, unsigned int size) {
 	mI = 0;
 	mPin = pin;
 	mSize = size;
 	mTotal = 0;
 	mReadings = new int[size];
 
-	for (unsigned int i=0; i<size; i++) {
+	for (unsigned int i=0; i<mSize; i++) {
 		mReadings[i] = 0;
 	}
 }
 
+AnalogSmoother::~AnalogSmoother() {
+	delete mReadings;
+}
+
 void AnalogSmoother::fill() {
-	for (unsigned int i=0; i<size; i++) {
+	for (unsigned int i=0; i<mSize; i++) {
 		read();
 	}
 }
