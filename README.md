@@ -1,3 +1,4 @@
 # Arduino AnalogSmoother Library
 
-This Arduino libary smoothes out an analog input.
+This Arduino library uses a running average to smooth out an analog inputs
+readings.
