@@ -4,6 +4,7 @@ AnalogSmoother analog(A0);
 
 void setup() {
 	Serial.begin(115200);
+	analog.fill();
 }
 
 void loop() {
