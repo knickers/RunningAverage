@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map for OneButton
+# Syntax Coloring Map for AnalogSmoother
 #######################################
 
 
@@ -12,6 +12,7 @@
 # Methods and Functions (KEYWORD2)
 #######################################
 
+fill	KEYWORD2
 read	KEYWORD2
 
 #######################################
@@ -23,5 +24,4 @@ AnalogSmoother	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
-
 
