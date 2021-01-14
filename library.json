@@ -1,10 +1,10 @@
 {
-	"name": "AnalogSmoother",
-	"keywords": "arduino, analog, average, running average, smooth, smoother",
-	"description": "This Arduino libary provides a single method for reading an analog input and returning an average over a configurable number of readings.",
+	"name": "RunningAverage",
+	"keywords": "arduino, average, running average, smooth, smoother",
+	"description": "This Arduino libary provides a single method for average over a configurable number of values.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/knickers/AnalogSmother"
+		"url": "https://github.com/knickers/RunningAverage"
 	},
 	"frameworks": "arduino, particle",
 	"platforms": "*"

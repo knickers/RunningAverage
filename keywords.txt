@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map for AnalogSmoother
+# Syntax Coloring Map for RunningAverage
 #######################################
 
 
@@ -19,7 +19,7 @@ read	KEYWORD2
 # Instances (KEYWORD2)
 #######################################
 
-AnalogSmoother	KEYWORD2
+RunningAverage	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

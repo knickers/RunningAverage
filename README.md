@@ -1,24 +1,26 @@
-# AnalogSmoother
+# RunningAverage
 
-This library employs a running average to smooth analog input readings.
+This library employs a running average to smooth a series of values.
 
 ```cpp
-#include "AnalogSmoother.h"
+#include "RunningAverage.h"
 
-AnalogSmoother sensor(A0, 10); // Buffer size of 10 readings
+RunningAverage smooth(10); // Buffer size of 10 readings
 
 void setup() {
 	Serial.begin(115200);
 
 	// Optional, fill the buffer with actual readings from the sensor
-	sensor.fill();
+	smooth.fill(random(15));
 }
 
 void loop() {
+	long int n = random(15);
+
 	// Draw 2 lines in the serial plotter
-	Serial.print(analogRead(A0));
+	Serial.print(n);
 	Serial.print(" ");
-	Serial.println(sensor.read());
+	Serial.println(sensor.append(n));
 
 	// Slow down the serial output
 	delay(10);
