@@ -10,7 +10,7 @@ RunningAverage smooth(10); // Buffer size of 10 readings
 void setup() {
 	Serial.begin(115200);
 
-	// Optional, fill the buffer with actual readings from the sensor
+	// Optional, fill the buffer with a starting value
 	smooth.fill(random(15));
 }
 
