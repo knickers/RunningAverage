@@ -4,10 +4,10 @@ RunningAverage::RunningAverage(unsigned int size) {
 	mI = 0;
 	mSize = size;
 	mTotal = 0;
-	mValues = new int[size];
+	mValues = new float[size];
 
 	for (unsigned int i=0; i<mSize; i++) {
-		mValues[i] = 0;
+		mValues[i] = 0.0;
 	}
 }
 
@@ -15,13 +15,13 @@ RunningAverage::~RunningAverage() {
 	delete mValues;
 }
 
-void RunningAverage::fill(int value) {
+void RunningAverage::fill(float value) {
 	for (unsigned int i=0; i<mSize; i++) {
 		append(value);
 	}
 }
 
-float RunningAverage::append(int value) {
+float RunningAverage::append(float value) {
 	mTotal     -= mValues[mI]; // Subtract old value
 	mTotal     += value;       // Add new value
 	mValues[mI] = value;       // Save new value
@@ -31,5 +31,5 @@ float RunningAverage::append(int value) {
 		mI = 0;
 	}
 
-	return (float)mTotal / (float)mSize;
+	return mTotal / (float)mSize;
 }
