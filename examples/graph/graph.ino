@@ -1,6 +1,6 @@
 #include "RunningAverage.h"
 
-RunningAverage average(10); // Buffer size of 10 readings
+RunningAverage average(10); // Buffer size of 10 values
 
 void setup() {
 	Serial.begin(115200);

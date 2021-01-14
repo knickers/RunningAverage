@@ -5,7 +5,7 @@ This library employs a running average to smooth a series of values.
 ```cpp
 #include "RunningAverage.h"
 
-RunningAverage smooth(10); // Buffer size of 10 readings
+RunningAverage smooth(10); // Buffer size of 10 values
 
 void setup() {
 	Serial.begin(115200);
